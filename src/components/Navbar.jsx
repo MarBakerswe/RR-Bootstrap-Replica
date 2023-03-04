@@ -12,20 +12,22 @@ function OffcanvasExample() {
   return (
     <>
       {[false].map((expand) => (
-        <Navbar key={expand} bg="light" expand={expand} className="mb-3">
-          <Container fluid className='flex-fill'>
+        <Navbar key={expand} bg="light" expand={expand}>
+          <Container>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Brand><img className="insta-logo" src={Logo} alt="logo" /></Navbar.Brand>
-                <Form>
+                
+               <Nav>
+                <Form className='d-flex'>
                   <Form.Control
                     type="search"
                     placeholder="Search"
-                    className="me-2"
+                    className="me-3 xs={12} md={8}"
                     aria-label="Search"
-                  />
-                  <Button variant="outline-success">Search</Button>
-                  
+                  /><Button variant="outline-success">Search</Button>
                 </Form>
+
+                </Nav>
                 <span>
                 <Button variant="light">Log in</Button>{' '}
                 <Button variant="success">Sign up</Button>{' '}
@@ -37,7 +39,7 @@ function OffcanvasExample() {
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  Offcanvas
+                <img className="insta-logo" src={Logo} alt="logo" />
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
